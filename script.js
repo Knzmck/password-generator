@@ -36,7 +36,7 @@ var LN = letters.concat(numbers);
 var LS = letters.concat(symbols);
 var LUN = letters.concat(upperCase,numbers);
 var LUS = letters.concat(upperCase, symbols);
-var LNS = letters.concat(upperCase, numbers, symbols)
+var LNS = letters.concat(upperCase, numbers, symbols);
 var LUNS = letters.concat(upperCase, numbers, symbols);
 
 
