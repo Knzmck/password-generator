@@ -5,51 +5,41 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-  
+
   passwordText.value = password;
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
+
+
+
+
+
+
 //**Making arrays 
-  var UPPERCASE_CHAR_CODES = arrayFromLowtoHigh(65, 90)
-  var LOWERCASE_CHAR_CODES = arrayFromLowtoHigh(97, 122)
-  var NUMBER_CHAR_CODES = arrayFromLowtoHigh(48, 57) 
-  var SYMBOL_CHAR_CODES = arrayFromLowtoHigh(58, 64) 
-  var letters = "A-Z"
- // var passLength = (user input)
+var letters = ('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z');
 
-function arrayFromLowtoHigh(low, high) {
-  const array = []
-  for (let i = low; i <= high; i++) {
-    array.push(i)
-  }
-  return array
-}
-//**synching character amount inputs
-const characterAmountRange = document.getElementById
-('characterAmountRange')
-const characterAmountNumber = document.getElementById
-('characterAmountNumber')
+var upperCase = (() => {
+  var upperCase = [...Array(26)].map((val, i) => String.fromCharCode(i + 65));
+  return upperCase
+})();
 
 
-characterAmountNumber.addEventListener('input', syncCharacterAmount)
-characterAmountRange.addEventListener('input', syncCharacterAmount)
+var numbers = ('1', '2', '3','4', '5', '6','7','8','9','0');
 
-function syncCharacterAmountNumber(e) {
-    const value = e.target.value
-    valuecharacterAmountNumber.value = value
-    valuecharacterAmountRange.value = value
+var symbols = (() => {
+  var symbols = [...Array(14)].map((val, i) => String.fromCharCode(i + 33));
+  return symbols
+})();
 
-}
-//Create arrays of uppercase, numbers, symbols and letters
-// always add letters
-// if user checks include uppercase add uppercase
-// if else do not
-//if user checks include numbers, add numbers 
-// if else do not
-// if user checks include symbols add symbols
-// if else do not
-// var length depends on number of symbols detected in input
-// generate password without refreshing the page 
+console.log(symbols);
+
+// Function for creating password
+
+
+
+
+
+
