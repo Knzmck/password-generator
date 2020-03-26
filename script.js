@@ -29,23 +29,31 @@ function includeSymbols () {
   includeSymbols.checked =true;
 }
 
-switch (true) {
+switch (userScenario) {
   case (includeUppercase === false && includeNumbers === false && includeSymbols === false) :
-    var scenario = letters
+    var userScenario = letters
+    break;
   case (includeUppercase === true && includeNumbers === false && includeSymbols === false) :
-    var scenario = letters.concat(upperCase);
+    var userScenario = letters.concat(upperCase);
+    break;
   case (includeUppercase === false && includeNumbers === true && includeSymbols === false) :
-    var scenario = letters.concat(numbers)
+    var userScenario = letters.concat(numbers)
+    break;
   case (includeUppercase === false && includeNumbers === false && includeSymbols === true) :
-    var scenario = letters.concat(symbols); 
+    var userScenario = letters.concat(symbols); 
+    break;
   case (includeUppercase === true && includeNumbers === true && includeSymbols === false) :
-    var scenario = letters.concat(upperCase,numbers);
+    var userScenario = letters.concat(upperCase,numbers);
+    break;
   case (includeUppercase === true && includeNumbers === false && includeSymbols === true) :
-    var scenario = letters.concat(upperCase, symbols);
+    var userScenario = letters.concat(upperCase, symbols);
+    break;
   case (includeUppercase === false && includeNumbers === true && includeSymbols === true) :
-    var scenario = letters.concat(numbers, symbols);
+    var userScenario = letters.concat(numbers, symbols);
+    break;
   case (includeUppercase === true && includeNumbers === true && includeSymbols === true) :
-    var scenario = letters.concat(upperCase, numbers, symbols);
+    var userScenario = letters.concat(upperCase, numbers, symbols);
+    break;
               default: 
 }
 
@@ -59,7 +67,7 @@ function writePassword() {
   var password = generatePassword(); {
     for (i=0;i<characterAmount;i++)
     var finalArray = Math.floor(Math.random()*chars.length+ 1;)
-    password += scenario.charAt(finalArray)
+    password += userScenario.charAt(finalArray)
   }
 
   var passwordText = document.querySelector("#password");
