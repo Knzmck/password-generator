@@ -30,6 +30,17 @@ var symbols = (() => {
   return symbols
 })();
 
+// joining arrays for various scenarios of user input LU, LN, LS, LUN, LUS, LNS, LUNS,
+var LU = letters.concat(upperCase);
+var LN = letters.concat(numbers);
+var LS = letters.concat(symbols);
+var LUN = letters.concat(upperCase,numbers);
+var LUS = letters.concat(upperCase, symbols);
+var LNS = letters.concat(upperCase, numbers, symbols)
+var LUNS = letters.concat(upperCase, numbers, symbols);
+
+
+
 // Function for variable for creating password length 
 
 var characterAmount = document.getElementById("characterAmount").value;
