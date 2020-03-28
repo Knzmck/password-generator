@@ -1,110 +1,64 @@
-//**Making arrays 
-var letters = ('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z');
-
-var upperCase = (() => {
-  var upperCase = [...Array(26)].map((val, i) => String.fromCharCode(i + 65));
-  return upperCase
+//**Making arrays for letters, uppercase letters, numbers & symbols 
+var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+​
+var numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
+​
+var uppercase = (() => {
+  var uppercase = [...Array(26)].map((val, i) => String.fromCharCode(i + 65));
+  return uppercase
 })();
-
-var numbers = ('1', '2', '3','4', '5', '6','7','8','9','0');
-
+​
 var symbols = (() => {
   var symbols = [...Array(14)].map((val, i) => String.fromCharCode(i + 33));
   return symbols
 })();
-
- //if upper case box is checked (value for variable)
- function includeUppercase () {
-  var includeUppercase = document.getElementById("includeUppercase");
-  includeUppercase.checked = true;
-}
-//if number box is checked
-function includeNumbers () {
-  var includeNumbers = document.getElementById("includenumbers");
-  includeNumbers.checked = true;
-}
-//if symbol box is checked
-function includeSymbols () {
-  var includeSymbols = document.getElementById("includesymbols");
-  includeSymbols.checked =true;
-}
-
-switch (userScenario) {
-  case (includeUppercase === false && includeNumbers === false && includeSymbols === false) :
-    var userScenario = letters
-    break;
-  case (includeUppercase === true && includeNumbers === false && includeSymbols === false) :
-    var userScenario = letters.concat(upperCase);
-    break;
-  case (includeUppercase === false && includeNumbers === true && includeSymbols === false) :
-    var userScenario = letters.concat(numbers)
-    break;
-  case (includeUppercase === false && includeNumbers === false && includeSymbols === true) :
-    var userScenario = letters.concat(symbols); 
-    break;
-  case (includeUppercase === true && includeNumbers === true && includeSymbols === false) :
-    var userScenario = letters.concat(upperCase,numbers);
-    break;
-  case (includeUppercase === true && includeNumbers === false && includeSymbols === true) :
-    var userScenario = letters.concat(upperCase, symbols);
-    break;
-  case (includeUppercase === false && includeNumbers === true && includeSymbols === true) :
-    var userScenario = letters.concat(numbers, symbols);
-    break;
-  case (includeUppercase === true && includeNumbers === true && includeSymbols === true) :
-    var userScenario = letters.concat(upperCase, numbers, symbols);
-    break;
-              default: 
-}
-
+​
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-
-// Write password to the #password input (prewritten)
-var characterAmount = document.getElementById("characterAmount").value;
-
-function writePassword() {
-  var password = generatePassword(); {
-    for (i=0;i<characterAmount;i++)
-    var finalArray = Math.floor(Math.random()*chars.length+ 1;)
-    password += userScenario.charAt(finalArray)
+​
+// Write password to the #password input 
+function writePassword(event) {
+  event.preventDefault();
+  var includeUppercase = document.getElementById("includeUppercase");
+  var includeNumbers = document.getElementById("includeNumbers");
+  var includeSymbols = document.getElementById("includeSymbols");
+  var upperCase = letters.forEach(a => a.toUpperCase());
+  console.log(upperCase)
+  if (includeUppercase.checked == true) {
+    letters = letters.concat(uppercase);
+    console.log(letters);
   }
-
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-}
-
-// Add event listener to generate button (prewritten)
-generateBtn.addEventListener("click", writePassword);
-
-
-
-
-
-
-
-
-/* switch (use array)
-
-case: uppercase is false, numbers is true, symbols are false
-use LN array */
-
-/*
-switch (true) {
-
-  case (var1 === true && var2 === true) :
-    //do something
-    break;
-  case (var1 === false && var2 === false) :
-    //do something
-    break;
-
-   default:
-
- }
-
- */
-
-  // Function for variable for creating password length 
+​
+  if (includeNumbers.checked == true) {
+    letters.concat(numbers);
+    console.log(letters);
+  }
+​
+  if (includeSymbols.checked == true) {
+    letters.concat(symbols);
+    console.log(letters);
+  }
+​
+  console.log(includeUppercase.checked);
+​
+  console.log("there");
   var characterAmount = document.getElementById("characterAmount").value;
+  var passwordText = "";
+​
+  for (i = 0; i < characterAmount; i++) {
+​
+  };
+  // var password = Math.floor(Math.random()*letters);
+  //   {
+  // password += letters.charAt(password)
+  // }
+​
+​
+  // var passwordText = document.querySelector("#password");
+​
+  // passwordText.value = password;
+​
+}
+​
+// // Add event listener to generate button 
+generateBtn.addEventListener("click", writePassword); 
