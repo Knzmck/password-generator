@@ -11,8 +11,6 @@ var symbols = (() => {
 })();
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-var passwordText = document.querySelector("#password");
-var passwordPlace = document.querySelector("#passwordtext");
 // Write password to the #password input 
 function writePassword(event) {
   event.preventDefault();
